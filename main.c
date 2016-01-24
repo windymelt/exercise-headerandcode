@@ -6,10 +6,11 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "personal_t.h"
+#include "personal_t.c"
+#include "search.c"
 #define N 3
 
-int main(int argc,char *argv[]){
+int main(int argc, char *argv[]) {
     /*** アドレス帳の構造体配列の定義、初期化とポインタ変数の定義 ***/
     personal_t pd[N] = {
         {"Ai", "Ube", 210},
