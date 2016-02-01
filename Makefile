@@ -15,7 +15,7 @@ TARGET = execute
 # ヘッダファイル*
 HEADS = 
 # ソースファイル*
-SRCS = main.c serch.c personal_t.c
+SRCS = main.c search.c personal_t.c
 # オブジェクトファイル
 OBJS = $(SRCS:.c=.o)
 #### $()はマクロの展開
@@ -41,16 +41,16 @@ all: $(TARGET)
 #### allは$(TARGET)に依存
 
 $(TARGET): $(OBJS)
-$(LD) $(LDFLAGS) $(OBJS) -o $@ $(LDLIBS)
+	$(LD) $(LDFLAGS) $(OBJS) -o $@ $(LDLIBS)
 
 #### 生成コマンドは必ずTabでインデント #### $@はターゲットファイル名に展開
 
 $(OBJS): $(HEADS) Makefile
 
 .c.o:
-$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 #### $<はひとつのソースファイル名に展開
 
 clean:
-$(RM) $(TARGET) $(OBJS)
+	$(RM) $(TARGET) $(OBJS)

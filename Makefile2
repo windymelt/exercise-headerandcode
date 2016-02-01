@@ -1,0 +1,10 @@
+all: execute
+PHONY: clean
+execute: main.o search.o
+	cc -o execute main.o search.o
+main.o: main.c
+	cc -c main.c -o main.o
+search.o: search.c
+	cc -c search.c -o search.o
+clean:
+	-rm -rf *.o execute

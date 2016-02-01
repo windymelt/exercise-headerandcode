@@ -5,9 +5,8 @@
  */
 
 #include <stdio.h>
-#include <string.h>
 #include "personal_t.c"
-#include "search.c"
+#include "search.h"
 #define N 3
 
 int main(int argc, char *argv[]) {
